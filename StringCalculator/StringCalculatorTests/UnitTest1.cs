@@ -34,6 +34,12 @@ namespace StringCalculatorTests
 
         [Theory]
         [InlineData("0,0", "0")]
+        [InlineData("0,1", "1")]
+        [InlineData("1,0", "1")]
+        [InlineData("1,1", "2")]
+        [InlineData("2,2", "4")]
+        [InlineData("2,8", "10")]
+        [InlineData("5,15", "20")]
         public void CalculatorCanHandleTwoValues(string numbers, string expected)
         {
             var calculator = new StringCalculatorOperator();
