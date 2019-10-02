@@ -14,5 +14,14 @@ namespace StringCalculatorTests
             calculator.Add(string.Empty).Should().Be("0");
 
         }
+
+        [Fact]
+        public void CalculatorCanHandleSingleValues()
+        {
+            var calculator = new StringCalculatorOperator();
+
+            calculator.Add("1").Should().Be("1");
+
+        }
     }
 }
