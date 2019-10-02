@@ -31,5 +31,14 @@ namespace StringCalculatorTests
             calculator.Add(number).Should().Be(expected);
 
         }
+
+        [Theory]
+        [InlineData("0,0", "0")]
+        public void CalculatorCanHandleTwoValues(string numbers, string expected)
+        {
+            var calculator = new StringCalculatorOperator();
+
+            calculator.Add(numbers).Should().Be(expected);
+        }
     }
 }
