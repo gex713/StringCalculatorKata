@@ -11,7 +11,9 @@ namespace StringCalculator
 
         public string Add(string number)
         {
-            return "0";
+            if (string.IsNullOrEmpty(number)) return "0";
+
+            return number;            
         }
     }
 }
