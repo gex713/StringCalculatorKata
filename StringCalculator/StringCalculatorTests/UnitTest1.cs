@@ -57,5 +57,14 @@ namespace StringCalculatorTests
 
             calculator.Add(numbers).Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("1.1,2.2", "3.3")]
+        public void CalculatorShouldHandleDecimals(string numbers, string expected)
+        {
+            var calculator = new StringCalculatorOperator();
+
+            calculator.Add(numbers).Should().Be(expected);
+        }
     }
 }
