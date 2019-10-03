@@ -46,5 +46,16 @@ namespace StringCalculatorTests
 
             calculator.Add(numbers).Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("0,0,0,0,0,0,0", "0")]
+        [InlineData("0,3,7,10,5", "25")]
+        [InlineData("1,2,3,4,5,6,7,8,9", "45")]
+        public void CalculatorShouldHandleUnknownNumberOfArguments(string numbers, string expected)
+        {
+            var calculator = new StringCalculatorOperator();
+
+            calculator.Add(numbers).Should().Be(expected);
+        }
     }
 }
