@@ -72,6 +72,8 @@ namespace StringCalculatorTests
 
         [Theory]
         [InlineData("1\n2,3", "6")]
+        [InlineData("1\n2,\n3", "6")]
+        [InlineData("3.3\n1.0\n1.2", "6.5")]
         public void CalculatorShouldHandleNewLinesAsSeparators(string numbers, string expected)
         {
             var calculator = new StringCalculatorOperator();
