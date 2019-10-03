@@ -15,10 +15,17 @@ namespace StringCalculator
         {
             if (string.IsNullOrEmpty(stringOfNumbers)) return "0";
 
-            var splitNumbers = stringOfNumbers.Split(',');
+            var splitOnCommas = stringOfNumbers.Split(',');
+
+            var splitOnNewLines = new List<string>();
+            foreach(string potential in splitOnCommas)
+            {
+                splitOnNewLines.AddRange(potential.Split('\n').ToList());
+            }
+
             var numbers = new List<double>();
 
-            foreach(string num in splitNumbers)
+            foreach(string num in splitOnNewLines)
             {
                 numbers.Add(double.Parse(num));
             }
