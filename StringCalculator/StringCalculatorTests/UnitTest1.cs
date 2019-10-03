@@ -60,6 +60,9 @@ namespace StringCalculatorTests
 
         [Theory]
         [InlineData("1.1,2.2", "3.3")]
+        [InlineData("1.5,2.0,3.9", "7.4")]
+        [InlineData("5.8,4.2,10.0", "20")]
+        [InlineData("1.1,1.1,1.1,1.1,1.1,1.1,1.1", "7.7")]
         public void CalculatorShouldHandleDecimals(string numbers, string expected)
         {
             var calculator = new StringCalculatorOperator();
