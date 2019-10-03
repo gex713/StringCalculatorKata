@@ -69,5 +69,14 @@ namespace StringCalculatorTests
 
             calculator.Add(numbers).Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("1\n2,3", "6")]
+        public void CalculatorShouldHandleNewLinesAsSeparators(string numbers, string expected)
+        {
+            var calculator = new StringCalculatorOperator();
+
+            calculator.Add(numbers).Should().Be(expected);
+        }
     }
 }
