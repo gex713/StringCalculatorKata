@@ -15,15 +15,15 @@ namespace StringCalculator
         {
             if (string.IsNullOrEmpty(stringOfNumbers)) return "0";
 
-            var numbers = stringOfNumbers.Split(',');
-            var numbersAsInts = new List<int>();
+            var splitNumbers = stringOfNumbers.Split(',');
+            var numbers = new List<double>();
 
-            foreach(string num in numbers)
+            foreach(string num in splitNumbers)
             {
-                numbersAsInts.Add(int.Parse(num));
+                numbers.Add(double.Parse(num));
             }
 
-            var sum = numbersAsInts.Sum().ToString();
+            var sum = numbers.Sum().ToString();
 
             return sum;            
         }
