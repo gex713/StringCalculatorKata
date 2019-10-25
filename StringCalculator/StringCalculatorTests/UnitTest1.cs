@@ -83,6 +83,8 @@ namespace StringCalculatorTests
 
         [Theory]
         [InlineData("175.2,\n35", "Number expected but \'\\n\' found at position 6.")]
+        [InlineData("175.2,,35", "Number expected but ',' found at position 6.")]
+        [InlineData("175.2\n\n35", "Number expected but \'\\n\' found at position 6.")]
         public void CalculatorShouldHandleReturningErrorMessages(string numbers, string expected)
         {
             var calculator = new StringCalculatorOperator();
