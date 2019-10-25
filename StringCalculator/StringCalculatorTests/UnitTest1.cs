@@ -80,5 +80,14 @@ namespace StringCalculatorTests
 
             calculator.Add(numbers).Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("175.2,\n35", "Number expected but \'\\n\' found at position 6.")]
+        public void CalculatorShouldHandleReturningErrorMessages(string numbers, string expected)
+        {
+            var calculator = new StringCalculatorOperator();
+
+            calculator.Add(numbers).Should().Be(expected);
+        }
     }
 }
